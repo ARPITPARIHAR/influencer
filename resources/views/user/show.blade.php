@@ -97,7 +97,7 @@
                             @endif
                         </td>
                         <td>
-                            <form action="" method="POST" style="display:inline;">
+                            <form action="{{ route('form-data.destroy', $form->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>

@@ -12,3 +12,4 @@ Route::get('form', [UserController::class, 'form']);
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/form/store', [FormController::class, 'store'])->name('form.store');
 Route::get('/show', [FormController::class, 'show'])->name('show');
+Route::delete('/form-data/{id}', [FormController::class, 'destroy'])->name('form-data.destroy');
