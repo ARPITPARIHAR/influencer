@@ -140,7 +140,7 @@
     width: 30%;
 }
 
-.social-item input[type="text"] {
+.social-item input[type="text"]:required {
     margin-left: 10px;
     flex-grow: 1;
 }
@@ -205,6 +205,20 @@ label {
     color:#eaffc5;
 }
 
+#newContentType {
+  display: none;
+  margin-top: 10px;
+  width: 100% !important; /* Ensure full width of container */
+  max-width: 600px; /* Max width to maintain layout consistency */
+}
+
+#newContentTypeInput {
+  width: 100% !important; /* Full width of the container */
+  box-sizing: border-box; /* Includes padding and border in the element's total width */
+  padding: 10px; /* Add padding for better appearance */
+  border: 1px solid #ccc; /* Border style */
+  border-radius: 5px; /* Rounded corners for a modern look */
+}
 
 
 
@@ -232,9 +246,7 @@ label {
       width: auto;
       border-radius: 10px;
     }
-
-
-    .social-container {
+.social-container {
       flex-direction: column;
     }
 
@@ -245,9 +257,10 @@ label {
     .social-container div:nth-child(odd) {
     margin-right: 0;
   }
-
-
-/* Optional: Custom styles for checked state */
+  .social-input {
+    width: calc(100% - 20px); /* Adjust width to be responsive */
+    margin-top: 5px; /* Add some spacing above the input */
+  }
 
 
 
@@ -261,7 +274,7 @@ label {
   </style>
 <div class="influencer" style="background-color:#064e3d; border-radius:15px;">
     <div class="container" data-aos="zoom-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true" data-aos-anchor-placement="top-center">
-        <h3 style="text-align:center; font-family:revert; font-size: 34px;">INFLUENCER SUBMISSION</h3>
+        <h3 style="text-align:center; font-family:revert; font-size: 34px;color:aliceblue;">INFLUENCER SUBMISSION</h3>
         <hr />
         <style>
             html, body {
@@ -364,7 +377,7 @@ label {
             </div>
 
             <div class="con">
-                <h2 class="heading">Social Media Handles</h2>
+                <h2 class="heading" style="color:aliceblue;">Social Media Handles</h2>
                 <div class="social-container">
                     <div class="social-item">
                         <input type="checkbox" id="facebook" name="social_media[]" value="facebook" />
@@ -399,7 +412,7 @@ label {
                 </div>
             </div>
 
-            <h2 class="content-heading" style="margin: 10px 0 0; font-weight: lighter;">Content Type</h2>
+            <h2 class="content-heading" style="margin: 10px 0 0; font-weight: lighter; color:aliceblue;">Content Type</h2>
 
             <div class="content-container">
                 <div class="content-type-row">
@@ -456,7 +469,7 @@ label {
                         <label for="addContentType">Add another content type</label>
                     </div>
                 </div>
-                <div id="newContentType" style="display: none; margin-top: 10px;">
+                <div id="newContentType" style="display: none; margin-top: 10px; ">
                     <label for="newContentTypeInput">Another Content Type:</label>
                     <input type="text" id="newContentTypeInput" name="newContentType" placeholder="Enter another content type" />
                 </div>
@@ -501,9 +514,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (flashMessage) {
     flashMessage.style.display = 'block';
-    form.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the form
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-    // Automatically hide flash message after 5 seconds
+
     setTimeout(function () {
       flashMessage.style.opacity = '0';
       setTimeout(function () {
@@ -519,7 +532,7 @@ function closeFlashMessage() {
     flashMessage.style.opacity = '0';
     setTimeout(function () {
       flashMessage.style.display = 'none';
-    }, 500); // Delay to match the opacity transition
+    }, 500);
   }
 }
 </script>
@@ -543,7 +556,7 @@ document.getElementById('personIcon').classList.add("hidden")
       }
 
     })
-// Handle social media input display
+
 document.querySelectorAll('.social-container input[type="checkbox"]').forEach((checkbox) => {
   checkbox.addEventListener("change", (e) => {
     const inputId = e.target.id + "Input";
@@ -565,17 +578,12 @@ document.querySelectorAll('.social-container input[type="checkbox"]').forEach((c
   });
 });
 
-
 document.querySelectorAll('.content-container input[type="checkbox"]').forEach((checkbox) => {
   checkbox.addEventListener("change", (e) => {
-    // No additional input fields for content types
+
   });
 });
-
-// Add functionality to add new content type inputs if needed
-
-
-    document.getElementById('addContentType').addEventListener('change', function() {
+  document.getElementById('addContentType').addEventListener('change', function() {
         var newContentTypeDiv = document.getElementById('newContentType');
         if (this.checked) {
             newContentTypeDiv.style.display = 'block';
@@ -594,7 +602,7 @@ document.querySelectorAll('.content-container input[type="checkbox"]').forEach((
 
 
 
-<!-- Newsletter Start -->
+
 <div class="container-xxl bg-primary my-6 wow fadeInUp" data-wow-delay="0.1s">
 <div class="container px-lg-5">
     <div class="row align-items-center" style="height: 250px;">
@@ -612,10 +620,7 @@ document.querySelectorAll('.content-container input[type="checkbox"]').forEach((
     </div>
 </div>
 </div>
-<!-- Newsletter End -->
 
-
-<!-- Service Start -->
 <div class="container-xxl py-6">
 <div class="container">
     <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">

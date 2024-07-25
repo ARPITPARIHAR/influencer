@@ -10,10 +10,7 @@ class FormController extends Controller
 
 public function store(Request $request)
 {
-    // Dump and die to view all request data
-    //  dd($request->all());
 
-    // Create a new form entry
     $form = new Form();
 
     $form->first_name = $request->input('firstName');
@@ -27,20 +24,38 @@ public function store(Request $request)
     }
     $form->social_media = json_encode($socialMedia);
     $contentTypes = $request->input('contentTypes', []);
+    $newContentType = $request->input('newContentType');
+    if (!empty($newContentType)) {
+
+        if ($newContentType !== 'Add another content type') {
+            $contentTypes[] = $newContentType;
+        }
+    }
+
+    $contentTypes = array_filter($contentTypes, function ($type) {
+        return $type !== 'Add another content type';
+    });
+
     $form->content_types = implode(',', $contentTypes);
-    // Handle file upload if present
 
     if ($request->hasFile('image')) {
         $fileName = time() . '-slider-' . $request->file('image')->getClientOriginalName();
         $filePath = $request->file('image')->storeAs('uploads/images', $fileName, 'public');
         $form->thumbnail_img = '/public/storage/' . $filePath;
     }
-    
-    // Save the form data
+
+
     $form->save();
 
-    // Redirect with a success message
     return redirect()->back()->with('success', 'Form submitted successfully!');
 }
+
+
+public function show()
+{
+    $formData = Form::all();
+    return view('user.show', ['formData' => $formData]);
+}
+
 
 }

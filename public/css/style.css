@@ -86,6 +86,7 @@
     font-weight: 500;
     outline: none;
     transition: .5s;
+    font-size: 18px;;
 }
 
 .navbar .navbar-nav .nav-link:hover,
