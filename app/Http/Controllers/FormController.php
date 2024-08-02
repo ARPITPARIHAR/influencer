@@ -63,7 +63,7 @@ public function destroy($id)
     $formData = Form::findOrFail($id);
     $formData->delete();
 
-    return redirect()->route('form-data.index')->with('success', 'Record deleted successfully.');
+    return redirect()->route('show')->with('success', 'Record deleted successfully.');
 }
 
 

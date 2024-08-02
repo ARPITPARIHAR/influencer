@@ -96,7 +96,7 @@
 
 .sticky-top.navbar .navbar-nav .nav-link {
     padding: 20px 10px;
-    color: var(--dark);
+    color: white;
 }
 
 .sticky-top.navbar .navbar-nav .nav-link:hover,

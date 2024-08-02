@@ -1,5 +1,5 @@
 
-<div class="container-xxl bg-primary hero-header">
+{{-- <div class="container-xxl bg-primary hero-header">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 text-center text-lg-start">
@@ -13,7 +13,7 @@
         </div>
     </div>
 </div>
-</div>
+</div> --}}
 <!-- Navbar & Hero End -->
 
 
@@ -272,7 +272,7 @@ label {
     }
 
   </style>
-<div class="influencer" style="background-color:#064e3d; border-radius:15px;">
+<div class="influencer" style="background-color:#04074e; border-radius:15px;">
     <div class="container" data-aos="zoom-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true" data-aos-anchor-placement="top-center">
         <h3 style="text-align:center; font-family:revert; font-size: 34px;color:aliceblue;">INFLUENCER SUBMISSION</h3>
         <hr />
