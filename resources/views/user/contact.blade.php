@@ -1,22 +1,17 @@
 @extends('user.layouts.app')
-@section('meta_title','game')
+@section('meta_title', 'game')
 @include('user.includes.navbar')
 
-
-
 <div class="container-xxl bg-primary page-header">
-    <div class="container text-center">
+    <div class="contact-container">
         <h1 class="text-white animated zoomIn mb-3">Contact Us</h1>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
-            </ol>
-        </nav>
+        <img src="img/contact-img.png" alt="Contact Image" class="contact-image">
     </div>
 </div>
-</div>
+<div class="bubble" style="left: 20%; animation-duration: 8s;"></div>
+<div class="bubble" style="left: 40%; animation-duration: 12s;"></div>
+<div class="bubble" style="left: 60%; animation-duration: 15s;"></div>
+<div class="bubble" style="left: 80%; animation-duration: 18s;"></div>
 
 <div class="container-xxl py-1">
     <div class="container" style="margin-top:30px;">
@@ -31,9 +26,9 @@
                     {{ session('success') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
-            <form method="POST" action="{{ route('contact.store') }}">
-                @csrf
+                @endif
+                <form method="POST" action="{{ route('contact.store') }}">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
@@ -58,10 +53,9 @@
                                 <textarea class="form-control" placeholder="Leave a message here" name="message" id="message" style="height: 150px" required></textarea>
                                 <label for="message">Message</label>
                             </div>
-
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            <button class="btn btn-primary w-100 py-3" style="bacakground-color:red;" type="submit">Send Message</button>
                         </div>
                     </div>
                 </form>
@@ -69,11 +63,57 @@
         </div>
     </div>
 </div>
+
+
+<style>
+.contact-container {
+    display: flex;
+    justify-content: center; /* Center contents horizontally */
+    align-items: center; /* Center contents vertically (optional) */
+    position: relative; /* Allow absolute positioning of the image */
+    height: 5vh; /* Optional: Adjust height as needed */
+    text-align: center; /* Center text inside the container */
+}
+
+.contact-image {
+    position: absolute;
+    right: 0;
+    top:10%;
+    transform: translateY(-50%);
+    /* Optional styles for image size */
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.bubble {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e4ff83;
+            animation: move 10s infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(100vh) scale(1);
+            }
+            50% {
+                transform: translateY(-50vh) scale(1.2);
+            }
+            100% {
+                transform: translateY(100vh) scale(1);
+            }
+        }
+</style>
 @include('user.includes.footer')
 
 @section('style')
-
+    <!-- Add your custom CSS here -->
 @endsection
+
 @section('script')
-
+    <!-- Add your custom JS here -->
 @endsection
+

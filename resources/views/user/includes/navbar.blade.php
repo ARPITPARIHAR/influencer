@@ -21,7 +21,7 @@
 
     <!-- Navbar & Hero Start -->
     <div class="container-xxl position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background-color:#0E2E50; height:50px;">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background-color:#003f62;; height:50px;">
 
 
             <a href="index.html" class="navbar-brand p-0">

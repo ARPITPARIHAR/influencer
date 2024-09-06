@@ -17,7 +17,53 @@
 <!-- Navbar & Hero End -->
 
 
-<!-- About Start -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Animation</title>
+    <style>
+
+
+        .bubble {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e4ff83;
+            animation: move 10s infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(100vh) scale(1);
+            }
+            50% {
+                transform: translateY(-50vh) scale(1.2);
+            }
+            100% {
+                transform: translateY(100vh) scale(1);
+            }
+        }
+    </style>
+</head>
+
+    <div class="bubble" style="left: 20%; animation-duration: 8s;"></div>
+    <div class="bubble" style="left: 40%; animation-duration: 12s;"></div>
+    <div class="bubble" style="left: 60%; animation-duration: 15s;"></div>
+    <div class="bubble" style="left: 80%; animation-duration: 18s;"></div>
+
+</html>
+
+
+
+
 <div class="container-xxl py-6">
 <div class="container">
     <div class="row g-5 align-items-center">
@@ -71,7 +117,7 @@
         box-sizing: border-box;
 
     }
-    .body {
+    /* .body {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -81,7 +127,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-    }
+    } */
     .influencer-container {
      background-color: rgba(61, 162, 137, 0.71); */
       margin: auto;
@@ -271,8 +317,54 @@ label {
     }
     }
 
+    body{
+                  background-color: #e4ff83 !important;
+            }
+
+
+.influencer {
+            background-color: #E91F72;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .svg-shape-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 0;
+        }
+
+        .svg-shape-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 0;
+            transform: rotate(180deg);
+        }
+
+
   </style>
-<div class="influencer" style="background-color:#04074e; border-radius:15px;">
+
+<body>
+    <div class="influencer">
+
+        <svg class="svg-shape-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="elementor-shape-fill" fill="#ffffff" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+            c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+            c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+        </svg>
     <div class="container" data-aos="zoom-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true" data-aos-anchor-placement="top-center">
         <h3 style="text-align:center; font-family:revert; font-size: 34px;color:aliceblue;">INFLUENCER SUBMISSION</h3>
         <hr />
@@ -483,7 +575,7 @@ label {
             width: 200px;
             height: 50px;
             margin: 20px auto;
-            background-color: darkcyan;
+            background-color:black;
             color: white;
             border: none;
             border-radius: 25px;
@@ -495,9 +587,11 @@ label {
         ">
             Submit
         </button>
+
         </form>
     </div>
 </div>
+
 @if(session('success'))
 <div id="flashMessage" class="flash-message">
   <img src="{{ asset('Img/successful.png') }}" alt="Success">
@@ -599,6 +693,7 @@ document.querySelectorAll('.content-container input[type="checkbox"]').forEach((
     </script>
 
 </html>
+
 
 
 
